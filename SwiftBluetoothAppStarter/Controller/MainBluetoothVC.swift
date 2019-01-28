@@ -10,12 +10,14 @@ import UIKit
 import CoreBluetooth
 
 class MainBluetoothVC: UIViewController {
-
-    //objects are used to manage discovered or connected remote peripheral devices 
+    
+    //objects are used to manage discovered or connected remote peripheral devices
     private var centralManager : CBCentralManager?
     
     private var names : [String] = []
     private var RSSIs : [NSNumber] = []
+    
+    private var timer : Timer?
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -24,9 +26,10 @@ class MainBluetoothVC: UIViewController {
         centralManager = CBCentralManager(delegate: self, queue: nil)
         
     }
-
+    
     @IBAction func refreshButtonTapped(_ sender: Any) {
-       startScan()
+        startScan()
+        startTimer()
     }
     
     private func startScan(){
@@ -35,6 +38,13 @@ class MainBluetoothVC: UIViewController {
         tableView.reloadData()
         centralManager?.stopScan()
         centralManager?.scanForPeripherals(withServices: nil, options: nil)
+    }
+    
+    private func startTimer(){
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { (timer) in
+            self.startScan()
+        })
     }
     
 }
@@ -59,6 +69,7 @@ extension MainBluetoothVC: CBCentralManagerDelegate{
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn{
             startScan()
+            startTimer()
         }else{
             let alertVC = UIAlertController(title: "Bluetooth is not working", message: "Make your bluetooth is on", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .default) { (action) in
@@ -73,7 +84,7 @@ extension MainBluetoothVC: CBCentralManagerDelegate{
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         
         if let name = peripheral.name{
-             names.append(name)
+            names.append(name)
         }
         else{
             names.append(peripheral.identifier.uuidString)
