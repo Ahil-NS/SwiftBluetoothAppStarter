@@ -13,8 +13,8 @@ class BluetoothCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var rssiLabel: UILabel!
     
-    func configureCell(name: String , rssi: String){
+    func configureCell(name: String , rssi: NSNumber){
         nameLabel.text = name
-        rssiLabel.text = rssi
+        rssiLabel.text = "\(rssi)"
     }
 }
