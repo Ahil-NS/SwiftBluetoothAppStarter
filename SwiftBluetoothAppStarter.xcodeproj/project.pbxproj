@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		FA92F91921FB80D200A06169 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA92F91821FB80D200A06169 /* AppDelegate.swift */; };
-		FA92F91B21FB80D200A06169 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA92F91A21FB80D200A06169 /* ViewController.swift */; };
+		FA92F91B21FB80D200A06169 /* MainBluetoothVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA92F91A21FB80D200A06169 /* MainBluetoothVC.swift */; };
 		FA92F91E21FB80D200A06169 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA92F91C21FB80D200A06169 /* Main.storyboard */; };
 		FA92F92021FB80D300A06169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA92F91F21FB80D300A06169 /* Assets.xcassets */; };
 		FA92F92321FB80D300A06169 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA92F92121FB80D300A06169 /* LaunchScreen.storyboard */; };
+		FACE9A8E21FCDEB20031F314 /* BluetoothCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE9A8D21FCDEB20031F314 /* BluetoothCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA92F91521FB80D200A06169 /* SwiftBluetoothAppStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBluetoothAppStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA92F91821FB80D200A06169 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FA92F91A21FB80D200A06169 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA92F91A21FB80D200A06169 /* MainBluetoothVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBluetoothVC.swift; sourceTree = "<group>"; };
 		FA92F91D21FB80D200A06169 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA92F91F21FB80D300A06169 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA92F92221FB80D300A06169 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA92F92421FB80D300A06169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACE9A8D21FCDEB20031F314 /* BluetoothCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,31 @@
 		FA92F91721FB80D200A06169 /* SwiftBluetoothAppStarter */ = {
 			isa = PBXGroup;
 			children = (
+				FACE9A8C21FCDE4B0031F314 /* Controller */,
+				FACE9A8B21FCDE420031F314 /* Cells */,
 				FA92F91821FB80D200A06169 /* AppDelegate.swift */,
-				FA92F91A21FB80D200A06169 /* ViewController.swift */,
 				FA92F91C21FB80D200A06169 /* Main.storyboard */,
 				FA92F91F21FB80D300A06169 /* Assets.xcassets */,
 				FA92F92121FB80D300A06169 /* LaunchScreen.storyboard */,
 				FA92F92421FB80D300A06169 /* Info.plist */,
 			);
 			path = SwiftBluetoothAppStarter;
+			sourceTree = "<group>";
+		};
+		FACE9A8B21FCDE420031F314 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FACE9A8D21FCDEB20031F314 /* BluetoothCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FACE9A8C21FCDE4B0031F314 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA92F91A21FB80D200A06169 /* MainBluetoothVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA92F91B21FB80D200A06169 /* ViewController.swift in Sources */,
+				FA92F91B21FB80D200A06169 /* MainBluetoothVC.swift in Sources */,
+				FACE9A8E21FCDEB20031F314 /* BluetoothCell.swift in Sources */,
 				FA92F91921FB80D200A06169 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
